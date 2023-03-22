@@ -6,18 +6,17 @@ const filePath = 'src/assets/nodejs-hw1-ex1.csv';
 
 const {
     O_TRUNC,
-  } = fs.constants;
+} = fs.constants;
 
-fs.exists(filePath, (e) => 
-{
+fs.exists(filePath, (e) => {
     csvtojson().fromFile(filePath)
-    .then((jsonData) => {
-        writeFile(jsonData)
-    })
+        .then((jsonData) => {
+            writeFile(jsonData)
+        })
 })
 
 function writeFile(jsonData) {
-    fs.open('src/assets/task1.txt','w', O_TRUNC, function( e, id ) {
+    fs.open('src/assets/task1.txt', 'w', O_TRUNC, function (e, id) {
         jsonData.forEach((json) => {
             fs.writeFile(id, JSON.stringify(json) + os.EOL, 'utf8', (err) => {
                 if (err) {
