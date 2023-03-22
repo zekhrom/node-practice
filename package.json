@@ -1,0 +1,24 @@
+{
+  "name": "practice",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "homework",
+  "main": "./src/tasks/task1.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve1": "babel-node ./src/tasks/task1.js",
+    "task1": "nodemon serve1 localhost 8080",
+    "task2": "nodemon ./src/tasks/task2.js localhost 8080"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.21.0",
+    "@babel/core": "^7.21.3",
+    "@babel/preset-env": "^7.20.2",
+    "nodemon": "^2.0.21"
+  },
+  "dependencies": {
+    "csvtojson": "^2.0.10"
+  }
+}
