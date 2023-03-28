@@ -9,8 +9,9 @@ const {
 } = fs.constants;
 
 if(fs.existsSync(filePath)) {
-  csvtojson().fromFile(filePath)
+  csvtojson({ delimiter: ';'}).fromFile(filePath)
     .then((jsonData) => {
+      console.log(jsonData);
       writeFile(jsonData)
     })
 }
